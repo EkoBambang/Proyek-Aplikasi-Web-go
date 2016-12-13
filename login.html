@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>Aplikasi Penjualan</title>
+<style type="text/css">
+	@import url(data/mycss.css);
+</style>
+
+
+<script src="data/my_jquerry.js"></script>
+<script>
+
+$(document).ready(function(){
+    $("#daftar").click(function(){
+       $("#daftar_menu").slideToggle("slow");
+	});});
+
+$(document).ready(function(){
+    $("#tutup_daftar").click(function(){
+       $("#daftar_menu").slideUp("slow");
+	;});});
+
+
+
+
+</script> 
+</head>
+
+<body>
+
+<div id="judul">
+<table width="100%" border="0">
+<tr>
+<td><h1>Selamat Datang</h1></td>
+<td colspan="3" height="60"></td>
+<td></td>
+</tr>
+</table>
+
+</div>
+<table width="100%" border="0" style="margin-top:60px">
+<tr>
+
+<td colspan="3" height="40"></td>
+</tr>
+<tr>
+
+<td height="50"></td>
+<td  style="text-align:center;background:url(data/iside.jpg);color:white;border-radius:10px;box-shadow:10px 10px 10px black"><h2>Login Menu</h2></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+
+<td width="30%"  style="background:url(data/login.jpg);border-radius:10px;box-shadow:10px 10px 10px black">
+<form method="post" action="/mau_login" style="margin-left:180px;">
+<br>
+<p>
+Username : <br>
+<input type="text" name="username_ku" required></p>
+<p>
+Password :<br>
+<input type="password" name="password_ku" required><br></p>
+
+<input type="submit" value="Login">
+</form>
+<!---<button id="daftar" style="margin-left:180px;margin-bottom:5px">Daftar</button>---->
+</td>
+<td></td>
+</tr>
+</table>
+<br>
+<br>
+
+<div id="daftar_menu" style="display:none;position:relative">
+<table height="450" width="100%" border="0" >
+<tr>
+<td width="30%"></td>
+<td height="20" style="background:url(data/iside.jpg);color:white;text-align:center;border-radius:10px;box-shadow:10px 10px 10px black"><h2>Menu Daftar</h2></td>
+<td width="30%"></td>
+</tr>
+<tr>
+<td width="30%"></td>
+<td style="background:url(data/body2.jpg);border-radius:10px;box-shadow:10px 10px 10px black;vertical-align:top">
+<form method="post" action="/mau_daftar" style="margin-left:80px;">
+<br>
+<br>
+<p>Nama Lengkap : <br> <input type="text" name=""></p>
+<p>Jenis Kelamin : <br><br>
+<input type="radio" name="kelamin" value="P"> Pria 
+<input type="radio" name="kelamin" value="W"> Wanita</p>
+<p>Username : <br> <input type="text" name=""></p>
+<p>Password : <br> <input type="text" name=""></p>
+<p>Konfirmasi Password :  <br><input type="text" name=""></p>
+<p><input type="checkbox"> saya setuju.</p><br>
+<br>
+
+
+<input type="submit" value="Mendaftar"><br><br><input type="reset" value="Kosongkan"><br>
+
+<br><br><input id="tutup_daftar" type="reset" value="Tutup"><br>
+
+</form>
+<br>
+<br>
+</td>
+<td width="30%"></td>
+</tr>
+</table>
+
+</div>
+
+<table height="250" width="100%" border="0">
+<tr>
+<td></td>
+</tr>
+</table>
+
+<table width="100%" border="0">
+<tr>
+
+<td height="40" style="background:url(data/iside.jpg);text-align:center;color:white;border-radius:10px;box-shadow:10px 10px 10px black">Copyright by Reno</td>
+</tr>
+
+
+</body>
+</html>

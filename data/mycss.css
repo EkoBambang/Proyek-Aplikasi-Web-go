@@ -1,0 +1,48 @@
+body {
+
+	font-family:tahoma,verdana,arial;
+	background:url(body.jpg);
+	background-attachment:fixed;
+	zoom:reset
+
+
+}
+
+
+html {
+	
+	zoom:reset;	
+}
+
+#judul {
+	margin-top:-12px;
+	
+		
+	
+}
+
+
+#judul table {
+	
+	background:url(iside.jpg);
+	text-align:center;
+	color:white;border-radius:10px;
+	box-shadow:10px 10px 10px black
+	
+}
+
+
+#stok_ku table tr td {
+  	background:url(body3.jpg);
+	color:white;
+	
+
+
+}
+#notaku table tr td {
+  	background:url(body3.jpg);
+	color:white;
+}
+
+
+

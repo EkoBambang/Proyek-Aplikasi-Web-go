@@ -1,0 +1,179 @@
+<html>
+<head>
+<title>Aplikasi Penjualan</title>
+<style type="text/css">
+	@import url(data/mycss.css);
+</style> 
+</head>
+
+<script src="data/w3.js"></script>
+<script src="data/my_jquerry.js"></script>
+<script src="data/money_count.js"></script>
+
+<script>
+
+
+$(document).ready(function(){
+    $("#sembunyi").click(function(){
+        $("#stok_ku_ini").slideToggle("slow");});});
+
+$(document).ready(function(){
+    $("#sembunyi_2").click(function(){
+        $("#nota_ku_ini").slideToggle("slow");
+ 	$("#nota_ku_ini_2").slideToggle("slow");
+	 $("#nota_ku_ini_3").slideToggle("slow");});});
+</script>
+<body>
+
+
+
+<div id="judul">
+<table width="100%" border="0" style="background:url(data/iside.jpg);text-align:right;color:white;border-radius:10px;">
+<tr>
+<td></td>
+<td colspan="3" ><form action="/mau_logout" method="post" style="margin-top:10px">Login as :  {{.nama_user_login}} <br>
+<input type="submit" value="Logout"></form></td>
+<td></td>
+
+</tr>
+</table>
+
+</div>
+
+<div id="konten">
+
+<table width="100%" height="1000" border="0">
+
+
+<tr>
+<td colspan="3" height="40"></td>
+
+</tr>
+<tr>
+<td width="20%"></td>
+<td style="background:url(data/body2.jpg);vertical-align:top;box-shadow:10px 10px 10px black">
+
+
+<table border="1" width="100%">
+<tr>
+<td height="100" style="text-align:center;background:url(data/iside.jpg);color:white"><h2>TRANSAKSI PENJUALAN<h2></td>
+
+</tr>
+</table>
+<br>
+
+<table border="0" width="100%">
+<tr>
+<form method="post">
+<td height="20" style="background:url(data/iside.jpg);color:white">kode : <input type="text" name="kd_barang" required value="{{.kd_barang}}"></td>
+
+<td style="background:url(data/iside.jpg);color:white"><button style="height:40px;width:50px" type="submit" formaction="/cari_barang">Cari</button></td>
+<td style="background:url(data/iside.jpg);color:white">nama barang : <input type="text" name="nama_barang" value="{{.nama_barang}}"></td>
+<td style="background:url(data/iside.jpg);color:white">harga : <input type="number" name="harga_barang" value="{{.harga_barang}}"></td>
+<td style="background:url(data/iside.jpg);color:white">satuan : <input type="text" style="width:150px" name="satuan_barang" value="{{.satuan_barang}}"></td>
+<td style="background:url(data/iside.jpg);color:white">jumlah : <input type="number" name= "jumlah_barang" value="{{.jumlah_barang}}"></td>
+<td style="background:url(data/iside.jpg);color:white">diskon : <input type="number" name= "diskon_barang" value="{{.diskon_barang}}"></td>
+
+<td style="background:url(data/iside.jpg);color:white"><button style="height:40px;width:80px" type="submit" formaction="/mau_jual">Jual</button></td>
+</form>
+</tr>
+</table>
+<br>
+<table border="1" width="100%">
+<tr>
+<td height="40" style="text-align:center;background:url(data/iside.jpg);color:white">Barang Tersedia</td>
+</tr>
+<tr>
+<td id="stok_ku_ini" height="200" style="vertical-align: top;"><div id="stok_ku" style="position:relative;overflow:auto;max-height:320px;" w3-include-html="data/tabel_stok.html"></div></td>
+</tr>
+
+</table>
+<br>
+<button id="sembunyi">sembunyikan stok</button>
+<br>
+<br>
+
+<table border="1" width="100%">
+<tr>
+<td height="40" style="text-align:center;background:url(data/iside.jpg);color:white">Nota Transaksi</td>
+
+</tr>
+<tr>
+<td id="nota_ku_ini"  height="200" style="vertical-align: top;"><div id="notaku" style="overflow:auto;max-height:320px;" w3-include-html="data/tabel_nota.html"></div><br>
+</td>
+</tr>
+<tr>
+<td id="nota_ku_ini_3" style="text-align:right;color:white;background:url(data/iside.jpg)"><br><br>Uang Yg Diberikan : <input type="number" id="uang_ku"/><br>
+<button onclick="hitung('total_semua_belanja','uang_ku','kembalian','uang_diberikan')">Hitung</button><br><br></td>
+</tr>
+<tr>
+<td id="nota_ku_ini_2" style="position:relative;text-align:center">
+<br><button style="height:40px;width:80px" onclick="printDiv('notaku')">Print Nota</button><br><br><br>
+<form method="post">
+<button type="submit" formaction="/hapus_nota">Kosongkan Nota</button>
+</form>
+</td>
+</tr>
+</table>
+<br>
+<button id="sembunyi_2">sembunyikan nota</button>
+
+<br>
+<br>
+
+
+</td><td width="20%"></td>
+</tr>
+<tr>
+<td colspan="3" height="100"></td>
+</tr>
+</table>
+</div>
+
+<table width="100%" border="0">
+<tr>
+
+<td height="40" style="background:url(data/iside.jpg);text-align:center;color:white;border-radius:10px;box-shadow:5px 5px 5px black">Copyright by Reno</td>
+</tr>
+</table>
+
+
+
+
+
+</body>
+
+<script>
+w3IncludeHTML();
+
+function printDiv(divName) {
+
+var cek = document.getElementById("uang_diberikan").innerHTML;
+
+if (cek == "0") {
+alert("harap lengkapi data nota!");
+return;
+
+
+}
+
+
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+	
+	location.reload();
+}
+
+
+
+
+
+</script>
+
+</html>
