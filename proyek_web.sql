@@ -38,7 +38,7 @@ CREATE TABLE `barang` (
 
 LOCK TABLES `barang` WRITE;
 /*!40000 ALTER TABLE `barang` DISABLE KEYS */;
-INSERT INTO `barang` VALUES ('b01','PC','unit',6000000,4),('b02','Ram','unit',700000,60),('b03','Minyak','liter',60000,58),('b04','beras','kg',75000,94);
+INSERT INTO `barang` VALUES ('b01','PC','unit',6000000,198),('b02','Ram','unit',700000,195),('b03','Minyak','liter',60000,185),('b04','beras','kg',75000,194);
 /*!40000 ALTER TABLE `barang` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +61,7 @@ CREATE TABLE `nota` (
   PRIMARY KEY (`no`),
   KEY `username` (`username`),
   CONSTRAINT `nota_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `nota` (
 
 LOCK TABLES `nota` WRITE;
 /*!40000 ALTER TABLE `nota` DISABLE KEYS */;
-INSERT INTO `nota` VALUES ('b02','Ram','unit',700000,2,0.5,2,'rikka'),('b04','beras','kg',75000,7,0,5,'rikka'),('b01','PC','unit',6000000,5,0,11,'rikka'),('b04','beras','kg',75000,1,0.45,19,'rikka'),('b03','Minyak','liter',60000,1,0.7,20,'renosyah'),('b01','PC','unit',6000000,2,0,21,'renosyah'),('b01','PC','unit',6000000,2,0.1,22,'renosyah'),('b02','Ram','unit',700000,5,0.12,23,'renosyah'),('b01','PC','unit',6000000,5,0.12,24,'rikka'),('b02','Ram','unit',700000,5,0.12,25,'renosyah'),('b03','Minyak','liter',60000,1,0.05,26,'rikka'),('b01','PC','unit',6000000,1,0.5,27,'renosyah');
+INSERT INTO `nota` VALUES ('b04','beras','kg',75000,1,0.3,9,'renosyah'),('b02','Ram','unit',700000,2,0.5,10,'renosyah'),('b03','Minyak','liter',60000,1,0.45,11,'renosyah'),('b03','Minyak','liter',60000,5,0.25,12,'renosyah');
 /*!40000 ALTER TABLE `nota` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,7 +95,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('reno syahputra','renosyah','12345'),('rikka','rikka','12345');
+INSERT INTO `user` VALUES ('Reno Syahputra','renosyah','12345'),('Rikka Syahputri','rikka','12345');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -108,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-06 15:40:39
+-- Dump completed on 2016-12-13 19:12:24
